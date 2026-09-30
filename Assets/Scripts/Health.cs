@@ -1,24 +1,29 @@
 using UnityEngine;
 
-public class BulletScript : MonoBehaviour
+public class Health : MonoBehaviour
 {
-    float bulletSpeed = 20f;
+
+    int MHP = 100;
+    int CHP = 100;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position += bulletSpeed * transform.forward * Time.deltaTime;
+        
     }
 
-    private void OnCollisionEnter(Collision collision)
+    void takeDamage(int damage)
     {
-        print("Ouch");
+        CHP -= damage;
+        if (CHP <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
-
 }
