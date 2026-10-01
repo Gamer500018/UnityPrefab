@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Health : MonoBehaviour
@@ -5,6 +6,8 @@ public class Health : MonoBehaviour
 
     int MHP = 100;
     int CHP = 100;
+
+  
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,7 +21,7 @@ public class Health : MonoBehaviour
         
     }
 
-    void takeDamage(int damage)
+    internal void takeDamage(int damage)
     {
         CHP -= damage;
         if (CHP <= 0)
